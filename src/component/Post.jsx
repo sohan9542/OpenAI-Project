@@ -85,7 +85,7 @@ export default function Post() {
     if(surprize){
         setPrompt(surprises[randomNumber].prompt)
     }
-    fetch("http://localhost:8000/api/generate", {
+    fetch("https://open-ai-project-server.vercel.app/api/generate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(!surprize ? { prompt: prompt } : {...surprises[randomNumber]}),
